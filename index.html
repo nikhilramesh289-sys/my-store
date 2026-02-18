@@ -5,108 +5,152 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Lost Frequencies | Premium Sneakers India</title>
-<meta name="description" content="Shop premium sneakers in India. Adidas Samba, Nike Air Force 1, Nike Dunks, Puma Speedcat, Onitsuka Tiger and more at Lost Frequencies.">
-<meta name="keywords" content="Nike Air Force 1 India, Adidas Samba India, Nike Dunks India, Puma Speedcat, Lost Frequencies sneakers">
-<meta name="author" content="Nikhil">
+<meta name="description" content="Lost Frequencies — Premium sneakers in India. Shop Nike, Adidas, Puma, Onitsuka Tiger and more.">
+<meta name="keywords" content="Nike Air Force India, Adidas Samba India, Nike Dunks India, Puma Speedcat, sneakers India">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
-body{background:#0a0a0a;color:#fff;overflow-x:hidden}
+html{scroll-behavior:smooth}
+body{background:#0a0a0a;color:#fff}
 
 /* NAVBAR */
 .navbar{
-  position:fixed;
-  top:0;
-  width:100%;
-  padding:18px 60px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:rgba(0,0,0,.55);
-  backdrop-filter:blur(12px);
-  z-index:1000;
+position:fixed;
+top:0;
+width:100%;
+padding:20px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(12px);
+z-index:1000;
 }
-.logo{font-weight:700;font-size:20px;letter-spacing:2px}
-.nav-links{display:flex;gap:30px}
+
+.logo{font-weight:700;font-size:22px;letter-spacing:2px}
+
 .nav-links a{
-  color:#fff;
-  text-decoration:none;
-  transition:.3s;
-  font-size:14px;
+margin-left:30px;
+text-decoration:none;
+color:#fff;
+font-weight:500;
+transition:.3s;
 }
-.nav-links a:hover{color:#00ffc8}
+.nav-links a:hover{opacity:.6}
 
 /* HERO */
 .hero{
-  height:100vh;
-  background:#0a0a0a url('hero.jpg') no-repeat center center;
-  background-size:contain;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  position:relative;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
+overflow:hidden;
 }
+
+.hero img{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:contain; /* ✅ FULL IMAGE FIX */
+opacity:.35;
+}
+
+.hero-content{position:relative;z-index:2}
+
+.hero h1{
+font-size:56px;
+letter-spacing:4px;
+margin-bottom:10px;
+}
+
+.hero p{opacity:.8}
 
 /* MUSIC BUTTON */
 .music-btn{
-  position:fixed;
-  bottom:25px;
-  right:25px;
-  background:#111;
-  border:1px solid #333;
-  padding:12px 16px;
-  border-radius:50px;
-  cursor:pointer;
-  z-index:999;
+position:fixed;
+right:25px;
+bottom:25px;
+width:55px;
+height:55px;
+border-radius:50%;
+background:#111;
+border:1px solid #333;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+z-index:999;
+transition:.3s;
 }
+.music-btn:hover{transform:scale(1.1)}
 
 /* PRODUCTS */
-.section{padding:100px 60px}
+.products{
+padding:120px 60px;
+max-width:1400px;
+margin:auto;
+}
+
+.section-title{
+font-size:32px;
+margin-bottom:40px;
+}
+
 .grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:28px;
 }
+
 .card{
-  background:#111;
-  border-radius:16px;
-  overflow:hidden;
-  transition:.35s;
-  transform:translateY(40px);
-  opacity:0;
+background:#111;
+border-radius:18px;
+overflow:hidden;
+transition:.35s;
+border:1px solid #1f1f1f;
 }
-.card.show{
-  transform:translateY(0);
-  opacity:1;
-}
+
 .card:hover{
-  transform:translateY(-8px) scale(1.02);
+transform:translateY(-10px);
+box-shadow:0 20px 60px rgba(0,0,0,.6);
 }
+
 .card img{
-  width:100%;
-  height:220px;
-  object-fit:contain;
-  background:#fff;
+width:100%;
+height:220px;
+object-fit:contain;
+background:#fff;
 }
-.card-body{padding:15px}
-.price{color:#00ffc8;margin-top:5px}
+
+.card-body{padding:16px}
+
+.card h3{
+font-size:15px;
+margin-bottom:6px;
+}
+
+.price{
+color:#00ffae;
+font-weight:600;
+}
 
 /* FOOTER */
 footer{
-  text-align:center;
-  padding:40px;
-  opacity:.6;
-  font-size:14px;
+text-align:center;
+padding:40px;
+opacity:.6;
+font-size:14px;
 }
 
 /* MOBILE */
 @media(max-width:768px){
-  .hero h1{font-size:32px}
-  .navbar{padding:16px 20px}
-  .section{padding:80px 20px}
+.hero h1{font-size:34px}
+.navbar{padding:20px}
+.products{padding:100px 20px}
 }
 </style>
 </head>
@@ -115,90 +159,78 @@ footer{
 
 <!-- NAVBAR -->
 <nav class="navbar">
-  <div class="logo">LOST FREQUENCIES</div>
-  <div class="nav-links">
-    <a href="#products">Shoes</a>
-    <a href="#products">New Drops</a>
-    <a href="#footer">Contact</a>
-  </div>
+<div class="logo">LOST FREQUENCIES</div>
+<div class="nav-links">
+<a href="#products">Shoes</a>
+<a href="#products">New Drops</a>
+<a href="#footer">Contact</a>
+</div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div>
-    <h1>STEP INTO FREQUENCY</h1>
-    <p>Premium Sneakers • India</p>
-  </div>
+<img src="hero.jpg" alt="Lost Frequencies Premium Sneakers India">
+<div class="hero-content">
+<h1>STEP INTO FREQUENCY</h1>
+<p>Premium Sneakers • India</p>
+</div>
 </section>
-
-<!-- MUSIC -->
-<button class="music-btn" onclick="toggleMusic()">🎧</button>
-<audio id="bgMusic" loop>
-  <source src="https://files.catbox.moe/8l9o6b.mp3" type="audio/mpeg">
-</audio>
 
 <!-- PRODUCTS -->
-<section id="products" class="section">
-  <h2 style="margin-bottom:40px">Featured Sneakers</h2>
-  <div class="grid" id="productGrid"></div>
+<section class="products" id="products">
+<h2 class="section-title">Featured Sneakers</h2>
+<div class="grid" id="grid"></div>
 </section>
 
+<!-- FOOTER -->
 <footer id="footer">
-  © 2026 Lost Frequencies • Premium Sneakers India
+© 2026 Lost Frequencies • Premium Sneakers India
 </footer>
 
-<script>
-// MUSIC
-const music=document.getElementById("bgMusic");
-function toggleMusic(){
-  if(music.paused){music.play();}
-  else{music.pause();}
-}
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
 
-// PRODUCTS DATA (30+)
-const shoes=[
-["Adidas Samba OG","₹8,999","https://assets.adidas.com/images/w_600,f_auto,q_auto/adidas_samba_og_white.jpg"],
-["Adidas Gazelle","₹9,499","https://assets.adidas.com/images/w_600,f_auto,q_auto/adidas_gazelle_black.jpg"],
-["Nike Air Force 1 White","₹10,999","https://static.nike.com/a/images/t_PDP_864_v1/air-force-1-07.jpg"],
-["Nike Air Force 1 Black","₹10,999","https://static.nike.com/a/images/t_PDP_864_v1/air-force-1-black.jpg"],
-["Nike Dunk Low Panda","₹11,999","https://static.nike.com/a/images/t_PDP_864_v1/dunk-low-panda.jpg"],
-["Nike Dunk Low Grey","₹11,999","https://static.nike.com/a/images/t_PDP_864_v1/dunk-low-grey.jpg"],
-["Nike Blazer Mid 77","₹9,999","https://static.nike.com/a/images/t_PDP_864_v1/blazer-mid-77.jpg"],
-["Puma Speedcat OG","₹7,999","https://images.puma.com/image/upload/f_auto,q_auto/speedcat-og.jpg"],
-["Puma Palermo","₹8,499","https://images.puma.com/image/upload/f_auto,q_auto/palermo.jpg"],
-["Onitsuka Tiger Mexico 66","₹10,999","https://www.onitsukatiger.com/images/mexico-66.jpg"]
+<div class="music-btn" onclick="toggleMusic()">🎧</div>
+
+<script>
+const shoes = [
+["Adidas Samba OG","₹8,999","https://images.stockx.com/images/adidas-Samba-OG-Black-White-Gum.jpg"],
+["Adidas Gazelle","₹9,499","https://images.stockx.com/images/adidas-Gazelle-Indoor-Blue.jpg"],
+["Nike Air Force 1 White","₹10,999","https://images.stockx.com/images/Nike-Air-Force-1-Low-White-07.jpg"],
+["Nike Air Force 1 Black","₹10,999","https://images.stockx.com/images/Nike-Air-Force-1-Low-Black-White.jpg"],
+["Nike Dunk Low Panda","₹11,999","https://images.stockx.com/images/Nike-Dunk-Low-Retro-White-Black-Panda.jpg"],
+["Nike Dunk Low Grey","₹11,999","https://images.stockx.com/images/Nike-Dunk-Low-Grey-Fog.jpg"],
+["Nike Blazer Mid 77","₹9,999","https://images.stockx.com/images/Nike-Blazer-Mid-77-Vintage-White-Black.jpg"],
+["Puma Speedcat OG","₹7,999","https://images.stockx.com/images/Puma-Speedcat-OG-Red.jpg"],
+["Puma Palermo","₹8,499","https://images.stockx.com/images/Puma-Palermo-White-Green.jpg"],
+["Onitsuka Tiger Mexico 66","₹10,999","https://images.stockx.com/images/Onitsuka-Tiger-Mexico-66-Yellow-Black.jpg"]
 ];
 
-// duplicate to reach 30+
-while(shoes.length<30){shoes.push(...shoes.slice(0,5));}
+const grid=document.getElementById("grid");
 
-const grid=document.getElementById("productGrid");
-
-shoes.forEach((s,i)=>{
-  const card=document.createElement("div");
-  card.className="card";
-  card.innerHTML=`
-    <img src="${s[2]}" alt="${s[0]} sneakers India">
-    <div class="card-body">
-      <h3>${s[0]}</h3>
-      <div class="price">${s[1]}</div>
-    </div>
-  `;
-  grid.appendChild(card);
+shoes.forEach(s=>{
+const card=document.createElement("div");
+card.className="card";
+card.innerHTML=`
+<img src="${s[2]}" alt="${s[0]}">
+<div class="card-body">
+<h3>${s[0]}</h3>
+<div class="price">${s[1]}</div>
+</div>
+`;
+grid.appendChild(card);
 });
 
-// reveal animation
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting) e.target.classList.add("show");
-  });
-},{threshold:.15});
-
-setTimeout(()=>{
-  document.querySelectorAll(".card").forEach(c=>observer.observe(c));
-},300);
+/* MUSIC */
+const music=document.getElementById("bgMusic");
+let playing=false;
+function toggleMusic(){
+if(!playing){music.play();playing=true;}
+else{music.pause();playing=false;}
+}
 </script>
 
 </body>
 </html>
-
