@@ -1,11 +1,185 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Store</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CLTR Store | Premium Sneakers India</title>
+
+<meta name="description" content="Buy premium sneakers like Nike, Adidas, Puma and Onitsuka in India. Latest streetwear shoes at CLTR Store.">
+<meta name="keywords" content="Nike Air Force, Adidas Samba, Nike Dunks India, Puma Speedcat, sneakers India">
+<meta name="author" content="Nikhil">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+body{background:#0a0a0a;color:#fff}
+
+/* NAVBAR */
+.navbar{
+display:flex;justify-content:space-between;align-items:center;
+padding:18px 40px;background:#000;position:sticky;top:0;z-index:1000
+}
+.logo{font-size:24px;font-weight:700;letter-spacing:2px}
+.nav-links{display:flex;gap:25px;list-style:none}
+.nav-links a{text-decoration:none;color:#fff;transition:.3s}
+.nav-links a:hover{color:#00ffc8}
+
+.music-btn{
+background:#00ffc8;border:none;padding:8px 14px;border-radius:8px;
+cursor:pointer;font-weight:bold
+}
+
+/* HERO */
+.hero{
+text-align:center;padding:60px 20px
+}
+.hero h1{font-size:36px;margin-bottom:10px}
+.hero p{opacity:.8}
+
+/* PRODUCTS */
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:28px;
+padding:40px;
+}
+
+.card{
+background:#111;border-radius:16px;padding:18px;text-align:center;
+transition:.35s ease;cursor:pointer
+}
+.card:hover{
+transform:translateY(-10px) scale(1.04);
+box-shadow:0 0 30px rgba(0,255,200,.25)
+}
+.card img{
+width:100%;border-radius:12px;margin-bottom:12px
+}
+.price{color:#00ffc8;font-weight:700}
+
+/* FOOTER */
+footer{
+text-align:center;padding:30px;background:#000;margin-top:40px
+}
+footer a{color:#00ffc8;text-decoration:none;margin:0 10px}
+</style>
 </head>
+
 <body>
-  <h1>Hello — My Store</h1>
-  <p>My first Vercel website</p>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+<div class="logo">CLTR</div>
+
+<ul class="nav-links">
+<li><a href="#products">Shoes</a></li>
+<li><a href="#">New Drops</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+
+<button class="music-btn" onclick="toggleMusic()">🎵 Music</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<h1>Premium Streetwear Sneakers</h1>
+<p>Explore Nike, Adidas, Puma & Onitsuka collections</p>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="products">
+
+<!-- Adidas Samba -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=600" alt="Adidas Samba sneakers">
+<h3>Adidas Samba OG</h3>
+<p class="price">₹8,999</p>
+</div>
+
+<!-- Adidas Gazelle -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600" alt="Adidas Gazelle shoes">
+<h3>Adidas Gazelle</h3>
+<p class="price">₹9,499</p>
+</div>
+
+<!-- Puma Speedcat -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600" alt="Puma Speedcat shoes">
+<h3>Puma Speedcat</h3>
+<p class="price">₹7,999</p>
+</div>
+
+<!-- Puma Palermo -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600" alt="Puma Palermo sneakers">
+<h3>Puma Palermo</h3>
+<p class="price">₹8,499</p>
+</div>
+
+<!-- Onitsuka -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1528701800489-20be3c6b4cde?w=600" alt="Onitsuka Tiger Mexico 66">
+<h3>Onitsuka Tiger Mexico 66</h3>
+<p class="price">₹10,999</p>
+</div>
+
+<!-- Nike Air Force -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1543508282-6319a3e2621f?w=600" alt="Nike Air Force 1 white">
+<h3>Nike Air Force 1 White</h3>
+<p class="price">₹9,999</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?w=600" alt="Nike Air Force 1 black">
+<h3>Nike Air Force 1 Black</h3>
+<p class="price">₹9,999</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1588361861040-ac9b1018f6d5?w=600" alt="Nike Air Force 1 blue">
+<h3>Nike Air Force 1 Blue</h3>
+<p class="price">₹10,499</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=600" alt="Nike Air Force 1 red">
+<h3>Nike Air Force 1 Red</h3>
+<p class="price">₹10,499</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600" alt="Nike Air Force 1 grey">
+<h3>Nike Air Force 1 Grey</h3>
+<p class="price">₹10,999</p>
+</div>
+
+</section>
+
+<audio id="bgMusic" loop>
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+let playing=false;
+const music=document.getElementById("bgMusic");
+function toggleMusic(){
+playing?music.pause():music.play();
+playing=!playing;
+}
+</script>
+
+<footer>
+<p>Follow us</p>
+<a href="#">Instagram</a>
+<a href="#">Twitter</a>
+<a href="#">YouTube</a>
+</footer>
+
 </body>
 </html>
+
 
