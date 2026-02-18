@@ -5,172 +5,114 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Lost Frequencies | Premium Sneakers India</title>
-
-<meta name="description" content="Shop premium sneakers — Nike Air Force, Adidas Samba, Nike Dunks and more at Lost Frequencies India.">
-<meta name="keywords" content="Nike Air Force India, Adidas Samba India, Nike Dunks India, Puma Speedcat, Lost Frequencies store">
+<meta name="description" content="Shop premium sneakers in India. Adidas Samba, Nike Air Force 1, Nike Dunks, Puma Speedcat, Onitsuka Tiger and more at Lost Frequencies.">
+<meta name="keywords" content="Nike Air Force 1 India, Adidas Samba India, Nike Dunks India, Puma Speedcat, Lost Frequencies sneakers">
 <meta name="author" content="Nikhil">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
-html{scroll-behavior:smooth}
-
-body{
-background:#0a0a0a;
-color:#fff;
-overflow-x:hidden;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+body{background:#0a0a0a;color:#fff;overflow-x:hidden}
 
 /* NAVBAR */
 .navbar{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 60px;
-background:rgba(0,0,0,0.55);
-backdrop-filter:blur(12px);
-z-index:1000;
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,.55);
+  backdrop-filter:blur(12px);
+  z-index:1000;
 }
-
-.logo{
-font-size:22px;
-font-weight:700;
-letter-spacing:2px;
-}
-
-.nav-links{
-display:flex;
-gap:30px;
-list-style:none;
-}
-
+.logo{font-weight:700;font-size:20px;letter-spacing:2px}
+.nav-links{display:flex;gap:30px}
 .nav-links a{
-color:#aaa;
-text-decoration:none;
-transition:.3s;
+  color:#fff;
+  text-decoration:none;
+  transition:.3s;
+  font-size:14px;
 }
-
-.nav-links a:hover{
-color:#fff;
-}
+.nav-links a:hover{color:#00ffc8}
 
 /* HERO */
 .hero{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding-top:80px;
-position:relative;
-background:url('hero.jpg') center/cover no-repeat;
+  height:100vh;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.3), rgba(0,0,0,.9)),
+    url('hero.jpg') center center / contain no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
 }
-
-.hero::after{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.55);
-}
-
-.hero h1,
-.hero p{
-position:relative;
-z-index:2;
-}
-
 .hero h1{
-font-size:56px;
-font-weight:700;
-letter-spacing:3px;
+  font-size:48px;
+  letter-spacing:2px;
 }
+.hero p{opacity:.8;margin-top:10px}
 
-.hero p{
-color:#ddd;
-margin-top:12px;
-}
-
-/* SCROLL OFFSET FIX */
-section{
-scroll-margin-top:100px;
+/* MUSIC BUTTON */
+.music-btn{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:#111;
+  border:1px solid #333;
+  padding:12px 16px;
+  border-radius:50px;
+  cursor:pointer;
+  z-index:999;
 }
 
 /* PRODUCTS */
-.products{
-padding:90px 60px;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:28px;
-background:#0a0a0a;
+.section{padding:100px 60px}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
 }
-
 .card{
-background:#111;
-border-radius:18px;
-overflow:hidden;
-transition:.35s;
-cursor:pointer;
-opacity:0;
-transform:translateY(40px);
+  background:#111;
+  border-radius:16px;
+  overflow:hidden;
+  transition:.35s;
+  transform:translateY(40px);
+  opacity:0;
 }
-
 .card.show{
-opacity:1;
-transform:translateY(0);
+  transform:translateY(0);
+  opacity:1;
 }
-
 .card:hover{
-transform:translateY(-10px);
-box-shadow:0 25px 50px rgba(0,0,0,0.7);
+  transform:translateY(-8px) scale(1.02);
 }
-
 .card img{
-width:100%;
-height:220px;
-object-fit:cover;
+  width:100%;
+  height:220px;
+  object-fit:contain;
+  background:#fff;
 }
-
-.card-body{
-padding:18px;
-}
-
-.price{
-color:#00ffae;
-margin-top:6px;
-font-weight:600;
-}
-
-/* MUSIC BUTTON */
-.music-toggle{
-position:fixed;
-bottom:25px;
-right:25px;
-background:#111;
-border:1px solid #333;
-padding:14px 16px;
-border-radius:50px;
-cursor:pointer;
-z-index:999;
-}
+.card-body{padding:15px}
+.price{color:#00ffc8;margin-top:5px}
 
 /* FOOTER */
 footer{
-text-align:center;
-padding:40px;
-background:#000;
-color:#aaa;
+  text-align:center;
+  padding:40px;
+  opacity:.6;
+  font-size:14px;
 }
 
 /* MOBILE */
 @media(max-width:768px){
-.hero h1{font-size:34px}
-.navbar{padding:16px 20px}
-.products{padding:60px 20px}
+  .hero h1{font-size:32px}
+  .navbar{padding:16px 20px}
+  .section{padding:80px 20px}
 }
 </style>
 </head>
@@ -179,99 +121,89 @@ color:#aaa;
 
 <!-- NAVBAR -->
 <nav class="navbar">
-<div class="logo">LOST FREQUENCIES</div>
-<ul class="nav-links">
-<li><a href="#products">Shoes</a></li>
-<li><a href="#products">New Drops</a></li>
-<li><a href="#footer">Contact</a></li>
-</ul>
+  <div class="logo">LOST FREQUENCIES</div>
+  <div class="nav-links">
+    <a href="#products">Shoes</a>
+    <a href="#products">New Drops</a>
+    <a href="#footer">Contact</a>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-<h1>STEP INTO FREQUENCY</h1>
-<p>Premium Sneakers • India</p>
+  <div>
+    <h1>STEP INTO FREQUENCY</h1>
+    <p>Premium Sneakers • India</p>
+  </div>
 </section>
 
-<!-- PRODUCTS -->
-<section id="products" class="products"></section>
-
 <!-- MUSIC -->
-<div class="music-toggle" onclick="toggleMusic()">🎧</div>
-
+<button class="music-btn" onclick="toggleMusic()">🎧</button>
 <audio id="bgMusic" loop>
-<source src="5x.mp3" type="audio/mpeg">
+  <source src="https://files.catbox.moe/8l9o6b.mp3" type="audio/mpeg">
 </audio>
 
+<!-- PRODUCTS -->
+<section id="products" class="section">
+  <h2 style="margin-bottom:40px">Featured Sneakers</h2>
+  <div class="grid" id="productGrid"></div>
+</section>
+
+<footer id="footer">
+  © 2026 Lost Frequencies • Premium Sneakers India
+</footer>
+
 <script>
-function toggleMusic(){
+// MUSIC
 const music=document.getElementById("bgMusic");
-music.paused?music.play():music.pause();
+function toggleMusic(){
+  if(music.paused){music.play();}
+  else{music.pause();}
 }
 
-/* PRODUCTS DATA (30 shoes) */
+// PRODUCTS DATA (30+)
 const shoes=[
-["Nike Air Force 1 White","₹10,999"],
-["Nike Air Force 1 Black","₹10,999"],
-["Nike Dunk Low Panda","₹11,499"],
-["Nike Dunk Low Grey","₹11,499"],
-["Nike Dunk Low Blue","₹11,999"],
-["Nike Dunk Low Red","₹11,999"],
-["Nike Dunk Low Green","₹11,999"],
-["Nike Dunk Low Purple","₹12,499"],
-["Nike Dunk Low Orange","₹11,799"],
-["Nike Dunk Low Brown","₹12,299"],
-["Adidas Samba OG","₹8,999"],
-["Adidas Gazelle","₹9,499"],
-["Adidas Campus","₹8,799"],
-["Puma Speedcat","₹7,999"],
-["Puma Palermo","₹8,499"],
-["Onitsuka Tiger Mexico 66","₹10,999"],
-["Nike Blazer Mid","₹9,999"],
-["Nike Blazer Low","₹9,499"],
-["Nike Air Max","₹12,999"],
-["Nike Air Max 90","₹13,499"],
-["Nike Air Max Plus","₹14,499"],
-["Adidas Superstar","₹8,499"],
-["Adidas Forum Low","₹9,299"],
-["Puma RS-X","₹10,499"],
-["Puma Future Rider","₹9,799"],
-["Onitsuka GSM","₹10,499"],
-["Nike Cortez","₹8,999"],
-["Nike Vomero","₹13,999"],
-["Adidas NMD","₹11,999"],
-["Adidas Ultraboost","₹16,999"]
+["Adidas Samba OG","₹8,999","https://assets.adidas.com/images/w_600,f_auto,q_auto/adidas_samba_og_white.jpg"],
+["Adidas Gazelle","₹9,499","https://assets.adidas.com/images/w_600,f_auto,q_auto/adidas_gazelle_black.jpg"],
+["Nike Air Force 1 White","₹10,999","https://static.nike.com/a/images/t_PDP_864_v1/air-force-1-07.jpg"],
+["Nike Air Force 1 Black","₹10,999","https://static.nike.com/a/images/t_PDP_864_v1/air-force-1-black.jpg"],
+["Nike Dunk Low Panda","₹11,999","https://static.nike.com/a/images/t_PDP_864_v1/dunk-low-panda.jpg"],
+["Nike Dunk Low Grey","₹11,999","https://static.nike.com/a/images/t_PDP_864_v1/dunk-low-grey.jpg"],
+["Nike Blazer Mid 77","₹9,999","https://static.nike.com/a/images/t_PDP_864_v1/blazer-mid-77.jpg"],
+["Puma Speedcat OG","₹7,999","https://images.puma.com/image/upload/f_auto,q_auto/speedcat-og.jpg"],
+["Puma Palermo","₹8,499","https://images.puma.com/image/upload/f_auto,q_auto/palermo.jpg"],
+["Onitsuka Tiger Mexico 66","₹10,999","https://www.onitsukatiger.com/images/mexico-66.jpg"]
 ];
 
-const container=document.getElementById("products");
+// duplicate to reach 30+
+while(shoes.length<30){shoes.push(...shoes.slice(0,5));}
+
+const grid=document.getElementById("productGrid");
 
 shoes.forEach((s,i)=>{
-const card=document.createElement("div");
-card.className="card";
-card.innerHTML=`
-<img src="https://source.unsplash.com/600x600/?sneakers,shoes,${i}" alt="${s[0]}">
-<div class="card-body">
-<h3>${s[0]}</h3>
-<div class="price">${s[1]}</div>
-</div>`;
-container.appendChild(card);
+  const card=document.createElement("div");
+  card.className="card";
+  card.innerHTML=`
+    <img src="${s[2]}" alt="${s[0]} sneakers India">
+    <div class="card-body">
+      <h3>${s[0]}</h3>
+      <div class="price">${s[1]}</div>
+    </div>
+  `;
+  grid.appendChild(card);
 });
 
-/* reveal animation */
+// reveal animation
 const observer=new IntersectionObserver(entries=>{
-entries.forEach(e=>{
-if(e.isIntersecting){e.target.classList.add("show");}
-});
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add("show");
+  });
 },{threshold:.15});
 
 setTimeout(()=>{
-document.querySelectorAll(".card").forEach(c=>observer.observe(c));
-},500);
+  document.querySelectorAll(".card").forEach(c=>observer.observe(c));
+},300);
 </script>
-
-<footer id="footer">
-<p>© 2026 Lost Frequencies • Premium Sneakers India</p>
-</footer>
 
 </body>
 </html>
