@@ -3,19 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Lost Frequencies | Premium Sneakers India</title>
 
 <meta name="description" content="Shop premium sneakers — Nike Air Force, Adidas Samba, Nike Dunks and more at Lost Frequencies India.">
 <meta name="keywords" content="Nike Air Force India, Adidas Samba India, Nike Dunks India, Puma Speedcat, Lost Frequencies store">
+<meta name="author" content="Nikhil">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
+html{scroll-behavior:smooth}
 
 body{
 background:#0a0a0a;
 color:#fff;
+overflow-x:hidden;
 }
 
 /* NAVBAR */
@@ -56,13 +60,20 @@ color:#fff;
 
 /* HERO */
 .hero{
-height:90vh;
+height:95vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
 padding-top:80px;
+opacity:0;
+transform:translateY(40px);
+animation:heroReveal 1.2s ease forwards;
+}
+
+@keyframes heroReveal{
+to{opacity:1;transform:translateY(0);}
 }
 
 .hero h1{
@@ -76,11 +87,11 @@ color:#aaa;
 margin-top:12px;
 }
 
-/* GRID */
+/* PRODUCTS */
 .products{
 padding:80px 60px;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 gap:28px;
 }
 
@@ -90,11 +101,18 @@ border-radius:18px;
 overflow:hidden;
 transition:.35s;
 cursor:pointer;
+opacity:0;
+transform:translateY(40px);
+}
+
+.card.show{
+opacity:1;
+transform:translateY(0);
 }
 
 .card:hover{
 transform:translateY(-10px);
-box-shadow:0 20px 40px rgba(0,0,0,0.6);
+box-shadow:0 25px 50px rgba(0,0,0,0.7);
 }
 
 .card img{
@@ -126,9 +144,17 @@ cursor:pointer;
 z-index:999;
 }
 
+/* FOOTER */
+footer{
+text-align:center;
+padding:40px;
+background:#000;
+color:#aaa;
+}
+
 /* MOBILE */
 @media(max-width:768px){
-.hero h1{font-size:36px}
+.hero h1{font-size:34px}
 .navbar{padding:16px 20px}
 .products{padding:60px 20px}
 }
@@ -141,9 +167,9 @@ z-index:999;
 <nav class="navbar">
 <div class="logo">LOST FREQUENCIES</div>
 <ul class="nav-links">
-<li><a href="#">Shoes</a></li>
-<li><a href="#">New Drops</a></li>
-<li><a href="#">Contact</a></li>
+<li><a href="#products">Shoes</a></li>
+<li><a href="#products">New Drops</a></li>
+<li><a href="#footer">Contact</a></li>
 </ul>
 </nav>
 
@@ -154,39 +180,59 @@ z-index:999;
 </section>
 
 <!-- PRODUCTS -->
-<section class="products">
+<section id="products" class="products">
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db" alt="Nike Air Force 1">
-<div class="card-body">
-<h3>Nike Air Force 1</h3>
-<div class="price">₹10,999</div>
-</div>
-</div>
+<!-- We generate many premium shoes -->
+<!-- Nike, Adidas, Puma, Onitsuka etc -->
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1528701800489-20be3c1ea1c9" alt="Adidas Samba OG">
-<div class="card-body">
-<h3>Adidas Samba OG</h3>
-<div class="price">₹8,999</div>
-</div>
-</div>
+<script>
+const shoes=[
+["Nike Air Force 1 White","₹10,999"],
+["Nike Air Force 1 Black","₹10,999"],
+["Nike Dunk Low Panda","₹11,499"],
+["Nike Dunk Low Grey","₹11,499"],
+["Nike Dunk Low Blue","₹11,999"],
+["Nike Dunk Low Red","₹11,999"],
+["Nike Dunk Low Green","₹11,999"],
+["Nike Dunk Low Purple","₹12,499"],
+["Nike Dunk Low Orange","₹11,799"],
+["Nike Dunk Low Brown","₹12,299"],
+["Adidas Samba OG","₹8,999"],
+["Adidas Gazelle","₹9,499"],
+["Adidas Campus","₹8,799"],
+["Puma Speedcat","₹7,999"],
+["Puma Palermo","₹8,499"],
+["Onitsuka Tiger Mexico 66","₹10,999"],
+["Nike Blazer Mid","₹9,999"],
+["Nike Blazer Low","₹9,499"],
+["Nike Air Max","₹12,999"],
+["Nike Air Max 90","₹13,499"],
+["Nike Air Max Plus","₹14,499"],
+["Adidas Superstar","₹8,499"],
+["Adidas Forum Low","₹9,299"],
+["Puma RS-X","₹10,499"],
+["Puma Future Rider","₹9,799"],
+["Onitsuka GSM","₹10,499"],
+["Nike Cortez","₹8,999"],
+["Nike Vomero","₹13,999"],
+["Adidas NMD","₹11,999"],
+["Adidas Ultraboost","₹16,999"]
+];
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1519741497674-611481863552" alt="Nike Dunk Low">
-<div class="card-body">
-<h3>Nike Dunk Low</h3>
-<div class="price">₹11,499</div>
-</div>
-</div>
+const container=document.currentScript.parentElement;
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Puma Speedcat">
+shoes.forEach((s,i)=>{
+const card=document.createElement("div");
+card.className="card";
+card.innerHTML=`
+<img src="https://source.unsplash.com/600x600/?sneakers,shoes,${i}" alt="${s[0]}">
 <div class="card-body">
-<h3>Puma Speedcat</h3>
-<div class="price">₹7,999</div>
-</div>
-</div>
+<h3>${s[0]}</h3>
+<div class="price">${s[1]}</div>
+</div>`;
+container.appendChild(card);
+});
+</script>
 
 </section>
 
@@ -200,10 +246,24 @@ z-index:999;
 <script>
 function toggleMusic(){
 const music=document.getElementById("bgMusic");
-if(music.paused){music.play();}
-else{music.pause();}
+music.paused?music.play():music.pause();
 }
+
+/* reveal animation */
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting){e.target.classList.add("show");}
+});
+},{threshold:.15});
+
+setTimeout(()=>{
+document.querySelectorAll(".card").forEach(c=>observer.observe(c));
+},500);
 </script>
+
+<footer id="footer">
+<p>© 2026 Lost Frequencies • Premium Sneakers India</p>
+</footer>
 
 </body>
 </html>
